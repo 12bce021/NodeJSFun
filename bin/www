@@ -3,9 +3,18 @@
 /**
  * Module dependencies.
  */
-
+var express = require('express');
 var app = require('../app');
 var http = require('http');
+var path = require('path');
+var engines = require('consolidate');
+var ejs = require('ejs')
+
+// view engine setup
+app.set('views', path.join(__dirname, '../public/views'));
+app.use(express.static(path.join(__dirname, '../public')));
+app.engine('html', ejs.renderFile);
+app.set('view engine', 'html');
 
 /**
  * Get port from environment and store in Express.
