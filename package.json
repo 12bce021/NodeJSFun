@@ -4,7 +4,8 @@
   "description": "This is a nodeJS service",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon ./bin/www"
+    "test": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
