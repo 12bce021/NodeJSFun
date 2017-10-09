@@ -1,0 +1,22 @@
+{
+  "name": "nodejsfun",
+  "version": "1.0.0",
+  "description": "This is a nodeJS service",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/12bce021/NodeJSFun.git"
+  },
+  "author": "12bce021",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/12bce021/NodeJSFun/issues"
+  },
+  "homepage": "https://github.com/12bce021/NodeJSFun#readme",
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
