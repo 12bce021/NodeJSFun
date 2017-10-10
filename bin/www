@@ -4,10 +4,9 @@
  * Module dependencies.
  */
 var express = require('express');
-var app = require('../app');
+var app = express();
 var http = require('http');
 var path = require('path');
-var engines = require('consolidate');
 var ejs = require('ejs')
 
 // view engine setup
