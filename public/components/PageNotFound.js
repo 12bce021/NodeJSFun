@@ -1,8 +1,8 @@
-var react = require('react');
-var link = require('react-router');
+import React from 'react';
+import Link from 'react-router';
 
-module.exports = react.createClass({
-  render.function(){
+export default class PageNotFound extends React.Component {
+  render() {
     return (
       <div className="not-found">
         <h1>404</h1>
@@ -13,4 +13,4 @@ module.exports = react.createClass({
       </div>
     );
   }
-});
+}
