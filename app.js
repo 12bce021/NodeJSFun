@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-var react = require('react');
-var reactDOM = require('react-dom');
-var appRoutes = require('../components/AppRoutes');
-
-window.onload = () => {
-  reactDOM.render(<appRoutes/>, document.getElementById('main'));
-};
-=======
 import React from 'react'
 import express from 'express'
 import { renderToString } from 'react-dom/server';
@@ -48,4 +39,3 @@ app.get('*', (req, res) => {
 });
 
 export default app;
->>>>>>> Tried using React, babel and webpack
