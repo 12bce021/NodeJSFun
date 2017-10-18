@@ -3,6 +3,7 @@ import express from 'express'
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes/routes'
+import PageNotFound from './public/components/PageNotFound';
 const app = express()
 
 // universal routing and rendering
@@ -28,7 +29,7 @@ app.get('*', (req, res) => {
         markup = renderToString(<RouterContext {...renderProps}/>);
       } else {
         // otherwise we can render a 404 page
-        markup = renderToString(<NotFoundPage/>);
+        markup = renderToString(<PageNotFound/>);
         res.status(404);
       }
 

@@ -13,7 +13,7 @@ import ejs from 'ejs';
 
 // view engine setup
 app.set('views', path.join(__dirname, '../public/views'));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../public/css')));
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 
