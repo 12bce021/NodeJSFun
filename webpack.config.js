@@ -1,9 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: 'app-client.js',
+  entry: path.join(__dirname, 'src', 'app-client.js'),
   output: {
-    path: path.resolve(__dirname, './public/components'),
+    path: path.join(__dirname, 'src', 'static', 'js'),
+    publicPath: "/js/",
     filename: 'bundle.js'
   }
 };

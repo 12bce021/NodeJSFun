@@ -1,10 +1,25 @@
-import React from 'react'
-import express from 'express'
+'use strict'
+
+/**
+ * Module dependencies.
+ */
+import path from 'path';
+import {Server} from 'http';
+import Express from 'express';
+import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import routes from './routes/routes'
-import PageNotFound from './public/components/PageNotFound';
-const app = express()
+import routes from './routes';
+import PageNotFound from './components/PageNotFound';
+
+// initialize the server and configure support for ejs templates
+const app = new Express();
+const server = new Server(app);
+
+// view engine setup
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '../public/views'));
+app.use(Express.static(path.join(__dirname, 'static')));
 
 // universal routing and rendering
 app.get('*', (req, res) => {
@@ -39,4 +54,16 @@ app.get('*', (req, res) => {
   );
 });
 
-export default app;
+/**
+  * Get port from environment and the environment stage.
+ */
+const port = process.env.PORT || 8080;
+const env = process.env.NODE_ENV || 'production';
+
+// start the server
+server.listen(port, err => {
+  if (err) {
+    return console.error(err);
+  }
+  console.info(`Server running on http://localhost:${port} [${env}]`);
+});
